@@ -62,7 +62,7 @@ php_pear_libraries:
 ## Testing
 ```shell 
 $ git clone https://github.com/darthwade/ansible-role-php-pear.git
-$ cd ansible-ufw
+$ cd ansible-role-php-pear
 $ vagrant up
 ```
 

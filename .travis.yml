@@ -3,7 +3,6 @@ language: python
 python: "2.7"
 env:
   - PLAYBOOK=tests/test.yml
-  - INVENTORY=tests/inventory
 before_install:
  - sudo apt-get update -qq
 install:
@@ -20,14 +19,14 @@ script:
   - ln -s ansible-role-php-pear ../darthwade.php-pear
 
   # Check the role/playbook's syntax.
-  - ansible-playbook -i $INVENTORY $PLAYBOOK --syntax-check
+  - ansible-playbook -i tests/inventory $PLAYBOOK --syntax-check
 
   # Run the role/playbook with ansible-playbook.
-  - ansible-playbook -i $INVENTORY $PLAYBOOK --connection=local --sudo -vvvv
+  - ansible-playbook -i tests/inventory $PLAYBOOK --connection=local --sudo -vvvv
 
   # Run the role/playbook again, checking to make sure it's idempotent.
   - >
-    ansible-playbook -i $INVENTORY $PLAYBOOK --connection=local --sudo
+    ansible-playbook -i tests/inventory $PLAYBOOK --connection=local --sudo
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
