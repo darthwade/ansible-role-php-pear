@@ -10,17 +10,17 @@ Features include:
 ## Installation
 
 Using `ansible-galaxy`:
-```bash
+```sh
 $ ansible-galaxy install darthwade.php-pear
 ```
 
 Using `arm` ([Ansible Role Manager](https://github.com/mirskytech/ansible-role-manager/)):
-```bash
+```sh
 $ arm install darthwade.php-pear
 ```
 
 Using `git`:
-```bash
+```sh
 $ git clone https://github.com/darthwade/ansible-role-php-pear.git
 ```
 
