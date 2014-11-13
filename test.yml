@@ -1,0 +1,9 @@
+---
+- hosts: all
+  vars:
+    php_pear_channels:
+    - pear.phpunit.de
+    php_pear_libraries:
+    - phpunit/PHPUnit
+  roles:
+    - darthwade.php-pear

@@ -10,17 +10,17 @@ Features include:
 ## Installation
 
 Using `ansible-galaxy`:
-```shell
+```bash
 $ ansible-galaxy install darthwade.php-pear
 ```
 
 Using `arm` ([Ansible Role Manager](https://github.com/mirskytech/ansible-role-manager/)):
-```shell
+```bash
 $ arm install darthwade.php-pear
 ```
 
 Using `git`:
-```shell
+```bash
 $ git clone https://github.com/darthwade/ansible-role-php-pear.git
 ```
 
@@ -32,8 +32,9 @@ $ git clone https://github.com/darthwade/ansible-role-php-pear.git
 Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
 
 ```yaml
-# The PEAR channels that should be discovered so pear libraries can be installed. By default, PEAR is not configured to
-# autodiscover channels for libraries you would like installed, so you need to explicitly list all the libraries' channels here.
+# The PEAR channels that should be discovered so pear libraries can be installed. By default, 
+# PEAR is not configured to autodiscover channels for libraries you would like installed, 
+# so you need to explicitly list all the libraries' channels here.
 php_pear_channels:
   - pear.phpunit.de
   - pear.symfony.com
@@ -68,4 +69,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## License
 
 Licensed under the MIT License. See the LICENSE file for details.
+
 Copyright (c) 2014 [Vadym Petrychenko](http://petrychenko.com/)
