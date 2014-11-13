@@ -1,4 +1,6 @@
-# Ansible Role: PHP PEAR [![Build Status](https://travis-ci.org/darthwade/ansible-role-php-pear.png)](https://travis-ci.org/darthwade/ansible-role-php-pear)
+# Ansible Role: PHP PEAR 
+[![Build Status](https://travis-ci.org/darthwade/ansible-role-php-pear.png)](https://travis-ci.org/darthwade/ansible-role-php-pear)
+[![Gittip](http://img.shields.io/gittip/darthwade.svg)](https://www.gittip.com/darthwade/)
 
 Ansible role that installs PHP PEAR and its libraries/extensions.
 
@@ -10,17 +12,17 @@ Features include:
 ## Installation
 
 Using `ansible-galaxy`:
-```sh
+```shell 
 $ ansible-galaxy install darthwade.php-pear
 ```
 
 Using `arm` ([Ansible Role Manager](https://github.com/mirskytech/ansible-role-manager/)):
-```sh
+```shell 
 $ arm install darthwade.php-pear
 ```
 
 Using `git`:
-```sh
+```shell 
 $ git clone https://github.com/darthwade/ansible-role-php-pear.git
 ```
 
@@ -55,6 +57,13 @@ php_pear_libraries:
     - phpunit/PHPUnit
   roles:
     - darthwade.php-pear
+```
+
+## Testing
+```shell 
+$ git clone https://github.com/darthwade/ansible-role-php-pear.git
+$ cd ansible-ufw
+$ vagrant up
 ```
 
 ## Contributing

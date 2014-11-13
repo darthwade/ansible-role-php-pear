@@ -1,12 +1,33 @@
 ---
 language: python
 python: "2.7"
+env:
+  - PLAYBOOK=tests/test.yml
+  - INVENTORY=tests/inventory
 before_install:
  - sudo apt-get update -qq
 install:
+  # Install Ansible.
   - pip install ansible
+
+  # Install required dependencies.
+  # - ansible-galaxy install darthwade.php
 script:
-  - echo localhost > inventory
+  # Add ansible.cfg to pick up roles path.
+  - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
+
+  # Create symlink to role with correct name
   - ln -s ansible-role-php-pear ../darthwade.php-pear
-  - ansible-playbook --syntax-check -i inventory test.yml
-  - ansible-playbook -i inventory test.yml --connection=local --sudo -vvvv
+
+  # Check the role/playbook's syntax.
+  - ansible-playbook -i $INVENTORY $PLAYBOOK --syntax-check
+
+  # Run the role/playbook with ansible-playbook.
+  - ansible-playbook -i $INVENTORY $PLAYBOOK --connection=local --sudo -vvvv
+
+  # Run the role/playbook again, checking to make sure it's idempotent.
+  - >
+    ansible-playbook -i $INVENTORY $PLAYBOOK --connection=local --sudo
+    | grep -q 'changed=0.*failed=0'
+    && (echo 'Idempotence test: pass' && exit 0)
+    || (echo 'Idempotence test: fail' && exit 1)
