@@ -1,6 +1,7 @@
 # Ansible Role: PHP PEAR 
 [![Build Status](https://travis-ci.org/darthwade/ansible-role-php-pear.png)](https://travis-ci.org/darthwade/ansible-role-php-pear)
 [![Gittip](http://img.shields.io/gittip/darthwade.svg)](https://www.gittip.com/darthwade/)
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=darthwade&url=https://github.com/darthwade/ansible-role-php-pear&title=Ansible Role: PHP PEAR&language=&tags=github&category=software) 
 
 Ansible role that installs PHP PEAR and its libraries/extensions.
 
